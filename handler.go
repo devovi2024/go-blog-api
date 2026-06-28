@@ -14,6 +14,7 @@ func AboutHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "About Page")
 }
 
+
 func JSONHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
@@ -21,4 +22,11 @@ func JSONHandler(w http.ResponseWriter, r *http.Request) {
 		"message": "Welcome to Go Blog API",
 		"status":  "success",
 	})
+}
+
+func UserHandler(w http.ResponseWriter, r *http.Request) {
+
+	id := r.URL.Query().Get("id")
+
+	fmt.Fprintf(w, "User ID: %s", id)
 }

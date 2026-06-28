@@ -10,6 +10,7 @@ func StartServer() {
 	http.HandleFunc("/", HomeHandler)
 	http.HandleFunc("/about", AboutHandler)
 	http.HandleFunc("/json", JSONHandler)
+	http.HandleFunc("/user", UserHandler)
 	fmt.Println("Server Started: http://localhost:8080")
 
 	http.ListenAndServe(":8080", nil)
